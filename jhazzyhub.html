@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clever</title>
+</head>
+<body style="margin:0">
+    <iframe frameborder="0" allow="autoplay; fullscreen" allowfullscreen="1" 
+            style="width:100vw;height:100vh;display:none" title="YouTube video"></iframe>
+    <textarea id="youtubeLink" rows="4" cols="42" placeholder="Paste your link here" 
+    onkeydown="if(event.key!='Enter'&&event.keyCode!=13)return;event.preventDefault();document.querySelector('button').click()" 
+    onclick="document.querySelector('iframe').style.display = 'block'"></textarea><br>
+    <button onclick="const m=document.querySelector('textarea').value.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);const v=((m&&m[1].length==11)?m[1]:0);if(v){const f=document.querySelector('iframe');f.src='https://www.youtube-nocookie.com/embed/'+v+'?autoplay=1&rel=0';f.style.display='block'}">Enter Jhazzyhub</button>
+</body>
+</html>
