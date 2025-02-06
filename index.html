@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Enter Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005a9e;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Enter password to enter JhazzyHub:</h2>
+    <input type="text" id="password" placeholder="Enter password" />
+    <br>
+    <button onclick="checkPassword()">Submit</button>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'Amazing9') {
+                // Open a new blank tab
+                const newTab = window.open('about:blank', '_blank');
+                if (newTab) {
+                    // Inject the HTML content into the new tab
+                    newTab.document.write(`
+                        <meta name="viewport" content="width=device-width, initial-scale=1" />
+                        <title>Clever</title>
+                        <body style="margin:0">
+                            <iframe frameborder="0" allow="autoplay; fullscreen" allowfullscreen="1" style="width:100vw;height:100vh;display:none" title="YouTube video"></iframe>
+                            <textarea id="youtubeLink" rows="4" cols="42" placeholder="Paste your link here" 
+                            onkeydown="if(event.key!='Enter'&&event.keyCode!=13)return;event.preventDefault();document.querySelector('button').click()" 
+                            onclick="document.querySelector('iframe').style.display = 'block'"></textarea><br>
+                            <button onclick="const m=document.querySelector('textarea').value.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);const v=((m&&m[1].length==11)?m[1]:0);if(v){const f=document.querySelector('iframe');f.src='https://www.youtube-nocookie.com/embed/'+v+'?autoplay=1&rel=0';f.style.display='block'}">Enter Jhazzyhub</button>
+                        </body>
+                    `);
+
+                    // Close the document to complete the page rendering
+                    newTab.document.close();
+                } else {
+                    alert('Failed to open a new tab. Please check your browser settings.');
+                }
+            } else {
+                alert('Incorrect password!');
+            }
+        }
+    </script>
+
+</body>
+</html>
